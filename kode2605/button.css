@@ -1,0 +1,21 @@
+.wglanguage-name {
+	color: #252525;
+	font-family: Inter;
+	background-color: #FFFCF2;
+}
+.weglot-language-da {
+	color: #252525;
+	font-family: Inter;
+	background-color: #FFFCF2;
+}
+.weglot-language-en {
+	color: #252525;
+	font-family: Inter;
+	background-color: #FFFCF2;
+}
+.country-selector.weglot-dropdown .wgcurrent {
+	border: none;
+}
+.country-selector.weglot-dropdown span {
+	background-color: #FFFCF2;
+}

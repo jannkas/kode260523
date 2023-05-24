@@ -1,0 +1,140 @@
+<div id="signInModal" class="modal">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <div class="logo-container">
+        <img src="https://eksamen.ccskipper.dk/wp-content/uploads/2023/05/Artboard-1-copy-2.png" alt="Logo">
+      </div>
+      <form>
+        <label for="text">Sign up to our newsletter!</label>
+        <input type="text" id="email" name="email" required placeholder="Email">
+  
+  
+        <button type="submit">Sign up</button>
+      </form>
+    </div>
+  </div>
+  
+  <style>
+      .modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.5);
+    
+  }
+  
+  .modal-content {
+    background-color: #252525;
+    border-radius: 15px;
+    border: 2px solid #fffcf2;
+    margin: 15% auto;
+    padding: 20px;
+    width: 100%;
+    max-width: 400px;
+  }
+  
+  .close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+  }
+  
+  .close:hover,
+  .close:focus {
+    color: #fffcf2;
+    text-decoration: none;
+  }
+  
+  form {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  label {
+    margin-bottom: 5px;
+    color: #fffcf2;
+  }
+  
+  input[type="text"],
+  input[type="email"] {
+    padding: 10px;
+    margin-bottom: 10px;
+  }
+  
+  button[type="submit"] {
+    padding: 10px;
+    background-color: #fffcf2;
+    color: #252525;
+    border: none;
+    cursor: pointer;
+  }
+  
+  button[type="submit"]:hover {
+    color: #252525;
+    text-decoration: underline;
+  }
+  
+  .logo-container {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 5px;
+  }
+  
+  .logo-container img {
+    width: 290px;
+    max-width: 100%;
+    height: auto;
+  }
+  
+  
+  </style>
+  
+  <script>
+  // Henter HTML elementet "signInModal" 
+  var modal = document.getElementById('signInModal');
+  
+  // Henter HTML elementet “close”
+  var closeButton = document.querySelector('.close');
+  
+  // funktion til at vise sign in modal
+  function showSignInModal() {
+    modal.style.display = 'block';
+  }
+  
+  // funktion for at lukke sign in modal 
+  function closeSignInModal() {
+    modal.style.display = 'none';
+  }
+  
+  // funktion for at kunne klikke uden for modal indholdet
+  function handleClickOutside(event) {
+    if (event.target === modal) {
+      closeSignInModal();
+    }
+  }
+  
+  // hvis modalen når brugeren ruller 1200 pixels ned
+  function checkScrollPosition() {
+    if (window.pageYOffset >= 1200) {
+      showSignInModal();
+      window.removeEventListener('scroll', checkScrollPosition);
+    }
+  }
+  
+  // tilføj scroll event listener for at trigger sign in modalen
+  window.addEventListener('scroll', checkScrollPosition);
+  
+  // tilføj click event listener for at klikke uden for modal indholdet
+  window.addEventListener('click', handleClickOutside);
+  
+  // tilføj click event listener til close knappen
+  closeButton.addEventListener('click', closeSignInModal);
+  
+  </script>
